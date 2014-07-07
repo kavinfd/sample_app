@@ -3,30 +3,33 @@ require 'spec_helper'
 describe PagesController do
   integrate_views
   #Delete these examples and add some real ones
+  before(:each) do
+    @base_title = "Ruby on Rails Tutorial Sample App"
+  end
   it "should use PagesController" do
     controller.should be_an_instance_of(PagesController)
   end
   it "should have the right title" do
     get 'home'
     response.should have_tag("title",
-      "Ruby on Rails Tutorial Sample App | Home")
+      @base_title + " | Home")
   end
 
   it "should have the right title" do
     get 'contact'
     response.should have_tag("title",
-      "Ruby on Rails Tutorial Sample App | Contact")
+      @base_title + " | Contact")
   end
 
   it "should have the right title" do
     get 'about'
     response.should have_tag("title",
-      "Ruby on Rails Tutorial Sample App | About")
+      @base_title + " | About")
   end
 it "should have the right title" do
     get 'help'
     response.should have_tag("title",
-      "Ruby on Rails Tutorial Sample App | Help")
+      @base_title + " | Help")
   end
   describe "GET 'home'" do
     it "should be successful" do
