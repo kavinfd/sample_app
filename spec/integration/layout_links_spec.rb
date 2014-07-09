@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "LayoutLinks" do
 	it "should have a Home page at '/'" do
 		get '/'
-		response.should render_template('page/home')
+		response.should render_template('pages/home')
 	end
 	it "should have a Contact page at '/contact'" do
 		get '/contact'
